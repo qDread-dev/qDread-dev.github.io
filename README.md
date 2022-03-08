@@ -1,2 +1,2 @@
 # qDread-dev.github.io
-My Website
+The Homework Machine's github page
