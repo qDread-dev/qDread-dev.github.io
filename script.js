@@ -1,5 +1,4 @@
 window.onload = function(){
-  alert('All values are not simplified. Simplification will be added in a later update.');
     let basicInput = document.getElementById('equation');
     let basicOutput = document.getElementById('output');
     let exSqrtInput = document.getElementById('sqrtIn');
