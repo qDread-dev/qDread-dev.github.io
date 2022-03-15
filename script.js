@@ -10,7 +10,43 @@ window.onload = function(){
     let aFindB = document.getElementById('aFindB');
     let bFindB = document.getElementById('bFindB');
     let cFindB = document.getElementById('cFindB');
+    let simpSqrtInput = document.getElementById('sqrtInput');
+    let simpSqrtOutput = document.getElementById('sqrtOutput');
+    let k = 1;
 
+    function simplifySqrt(simpSqrtInput, simpSqrtOutput, k){
+      for (let i = 1; i * i <= simpSqrtInput.value; i++)
+      {
+        if (simpSqrtInput.value % (i * i) == 0)
+        {
+          k = i;
+        }
+      }
+      if (simpSqrtInput / (k * k) === null)
+      {
+        simpSqrtOutput.value = k;
+      }
+      if (simpSqrtInput.value / (k * k) == 1)
+      {
+        simpSqrtOutput.value = k;
+      }
+      else if (simpSqrtInput.value / (k * k) > 1)
+      {
+        if (k == "1")
+        {
+          simpSqrtOutput.value = "\u{221A}" + (simpSqrtInput.value / (k * k));
+        }
+        else
+        {
+          simpSqrtOutput.value = k + "\u{221A}" + (simpSqrtInput.value / (k * k));
+        }
+      }
+    };
+
+    simpSqrtInput.oninput = function(){
+      simplifySqrt(simpSqrtInput, simpSqrtOutput, k)
+    };
+    
     basicInput.oninput = function(){
       basicOutput.value = eval(basicInput.value);
     };
@@ -32,5 +68,6 @@ window.onload = function(){
         bFindB.value = cSquared - aSquared;
       };
     };
+
     
 };
