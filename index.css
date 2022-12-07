@@ -1,0 +1,11 @@
+.content{
+    display:flex;
+    justify-content: center;
+}
+a{
+    border:5px solid #C147E9;
+    color: #C147E9;
+}
+body{
+    background-color: #2D033B;
+}
