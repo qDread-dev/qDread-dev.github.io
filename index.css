@@ -1,6 +1,7 @@
 .content{
     display:flex;
     justify-content: center;
+    align-items: center;
 }
 a{
     border:5px solid #C147E9;
