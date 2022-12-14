@@ -16,3 +16,17 @@ body{
 .hello h1{
     color:#d8ed1c;
 }
+
+.experience-title{
+    /* background:transparent; Allows me to change color to see box */
+    background: transparent;
+    display:flex;
+    justify-content: center;
+}
+.experience-title h1{
+    color:#d8ed1c;
+}
+
+.experience-content{
+    
+}
