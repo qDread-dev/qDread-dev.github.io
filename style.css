@@ -1,4 +1,18 @@
+/* TODO
+1. Load theme based off of OS default
+2. mobile friendly
+3. Particles?
+*/
+
+body{
+    background-color: #3895e0;
+}
 .hello{
+    /* background:transparent; Allows me to change color to see box */
+    background: transparent;
     display:flex;
     justify-content: center;
+}
+.hello h1{
+    color:#d8ed1c;
 }
