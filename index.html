@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Dev Site WIP</title>
-        <link rel="stylesheet" href="style.css">
-            <meta name="description" content="Welcome to Academy Prime, your premier destination for high-quality education resources and tools. We provide a wide range of resources and tools for students, teachers, and educational professionals, including online courses, teaching materials, assessments, and more. Our mission is to make learning accessible to everyone, regardless of their location or background, and to provide innovative solutions to help learners succeed. Whether you're looking to improve your academic performance, expand your knowledge, or enhance your teaching skills, Academy Prime has something for you. Join our community today and take the first step towards your educational goals." />
-            <meta name="keywords" content="education, learning, teaching, curriculum, classroom, student, teacher, school, university, college, online learning, e-learning, distance education, study skills, academic, tutoring, assessment, exams, degree, certificate, diploma, professional development, career education, vocational education, STEM education, humanities education, language learning, adult education, early childhood education, special education, inclusive education, educational technology, instructional design, educational psychology, educational research, educational leadership, educational policy, education reform, pedagogy, andragogy, Montessori education, Waldorf education, experiential learning, blended learning, project-based learning, inquiry-based learning, flipped classroom, mastery learning, competency-based education, personalized learning, gamification in education, learning analytics, open educational resources, massive open online courses (MOOCs), learning management system (LMS), virtual classroom, augmented reality in education, 21st century skills, critical thinking skills, problem-based learning, student-centered learning, collaborative learning, peer-to-peer learning" />
+        <meta name="keywords" content="education, learning, teaching, curriculum, classroom, student, teacher, school, university, college, online learning, e-learning, " />
     </head>
     <body>
-        <div class="hello">
-            <p>Hello, my name is</p>
+        <div class="wrapper">
             <h1>qDread</h1>
+            <p>sample text</p>
         </div>
-        <br><br><br><br>
-        <div class="experience-title">
-            <p>I have</p>
-            <h1>Experience</h1>
-            <p>in...</p>
+        <div class="btnContainer">
+            <button onclick="openGithub()">Github</button>
+            <button>Projects</button>
+            <button>About</button>
         </div>
-        <div class="experience-content">
-            <p>TODO</p>
-        </div>
+        <script>
+            function openGithub(){
+                window.location.href = 'https://github.com/qDread-dev/';
+            }
+        </script>
+        <style>
+            .btnContainer button{
+                display: block;
+                padding: 10px 24px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btnContainer button:not(:last-child) {
+                border-bottom: none;
+            }
+            .wrapper {
+                text-align: center;
+            }
+            body {
+                background-color: #141414 ;
+            }
+            button{
+                background-color: #320064;
+                border-color: #282828 ;
+                width: 20vw;
+                border: 1px;
+                margin-bottom: 10px;
+                border-radius: 40px;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+            .btnContainer button:hover{
+                background-color: #230046;
+            }
+        </style>
     </body>
 </html>
