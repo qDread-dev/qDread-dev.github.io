@@ -1,57 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>qDread</title>
-        <meta name="keywords" content="education, learning, teaching, curriculum, classroom, student, teacher, school, university, college, online learning, e-learning, " />
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="wrapper">
-            <h1>qDread</h1>
-        </div>
-        <div class="btnContainer">
-            <button onclick="openGithub()">Github</button>
-            <button onclick="openProjects()">Projects</button>
-            <button>About</button>
-        </div>
-        <script>
-            function openGithub(){
-                window.location.href = 'https://github.com/qDread-dev/';
-            }
-            function openProjects(){
-                window.location.href = 'https://github.com/qDread-dev?tab=repositories';
-            }
-        </script>
-        <style>
-            .btnContainer button{
-                display: block;
-                padding: 10px 24px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .btnContainer button:not(:last-child) {
-                border-bottom: none;
-            }
-            .wrapper {
-                text-align: center;
-            }
-            body {
-                background-color: #141414 ;
-            }
-            button{
-                background-color: #320064;
-                border-color: #282828 ;
-                width: 20vw;
-                border: 1px;
-                margin-bottom: 10px;
-                border-radius: 40px;
-            }
-            h1 {
-                font-size: 5vw;
-                color: #FFFF;
-            }
-            .btnContainer button:hover{
-                background-color: #230046;
-            }
-        </style>
+        <h1 class="scramble-effect" data-value="ABOUT ME">ABOUT ME</h1>
+        <a href="https://google.com/" class="no-link">
+            <h1 class="scramble-effect" data-value="GITHUB">GITHUB</h1>
+        </a>
+        <script src="script.js"></script>
     </body>
 </html>
