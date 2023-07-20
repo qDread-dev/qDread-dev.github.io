@@ -1,32 +1,26 @@
-/* TODO
-1. Load theme based off of OS default
-2. mobile friendly
-3. Particles?
-*/
-
 body{
-    background-color: #3895e0;
-}
-.hello{
-    /* background:transparent; Allows me to change color to see box */
-    background: transparent;
-    display:flex;
-    justify-content: center;
-}
-.hello h1{
-    color:#d8ed1c;
+    background-color: black;
 }
 
-.experience-title{
-    /* background:transparent; Allows me to change color to see box */
-    background: transparent;
-    display:flex;
-    justify-content: center;
-}
-.experience-title h1{
-    color:#d8ed1c;
-}
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    text-align: center;
+    transition-duration: 0.25s;
+    cursor: pointer;
+  }
 
-.experience-content{
-    
-}
+h1:hover {
+    transition-duration: 0.25s;
+    background-color: white;
+    color: black;
+  }
+
+  .no-link{
+    cursor: default;
+    all: unset;
+  }
+  
