@@ -6,7 +6,7 @@ document.querySelectorAll('.scramble-effect').forEach(scrambleEffect => {
     const interval = setInterval(() => {
       event.target.innerText = event.target.innerText.split("")
         .map((letter, index) => {
-          if (index < iterations) {
+          if (index < iterations || event.target.dataset.value[index] == " ") {
             return event.target.dataset.value[index];
           }
           return letters[Math.floor(Math.random() * 26)];
