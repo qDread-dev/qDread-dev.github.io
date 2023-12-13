@@ -32,7 +32,11 @@ body {
     justify-content: center;
     flex-grow: 1;
     gap: 20px;
-    margin-left: 10px; /* Same as the padding of the #wrapper */
+    margin-left: 10px; 
+    color: var(--primary-color);
+}
+
+#icon-wrapper a:visited {
     color: var(--primary-color);
 }
 
