@@ -36,7 +36,7 @@ body {
     color: var(--primary-color);
 }
 
-#icon-wrapper a:visited {
+#icon-wrapper a, a:visited {
     color: var(--primary-color);
 }
 
