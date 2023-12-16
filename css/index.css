@@ -15,15 +15,6 @@ body {
     color: var(--text-color);
 }
 
-#wrapper {
-    display: flex;
-    padding: 10px;
-    border-radius: 10px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2a2c2f;
-    color: var(--text-color);
-}
 
 #icon-wrapper {
     display: flex;
@@ -40,13 +31,29 @@ body {
     color: var(--primary-color);
 }
 
-#status {
-    display: inline-block;
-    color: var(--primary-color);
-    color: var(--primary-color);
-}
-
-
 .fab {
     font-size: 50px;
 }
+
+#status-custom {
+    width: 60%;
+    background-color: #2a2c2f;
+}
+
+#profile-picture {
+    width: 5em;
+    border-radius: 50px;
+    border-width: 3px;
+    border-style: solid;
+}
+
+#activity-img {
+    border-radius: 100px;
+    display:inline;
+}
+
+#large-img {
+    width:128px;
+    border-radius: 10px;
+}
+#small-im

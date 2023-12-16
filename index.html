@@ -10,18 +10,23 @@
         <script src="./js/index.js"></script>
     </head>
     <body>
-        <div id="wrapper">
-            <img id="status" src="https://lanyard.cnrad.dev/api/587326588086124585?idleMessage=Sleeping%20(for%20once)"/>
-            <div id="icon-wrapper">
-                <a href="https://github.com/qDread-dev/" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://discordapp.com/users/587326588086124585" target="_blank">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <a href="https://steamcommunity.com/id/qDread" target="_blank">
-                    <i class="fab fa-steam"></i>
-                </a>
+        <div id="status-custom">
+            <div id="user-wrap">
+                <div id="info-wrap">
+                    <img src="" alt="" id="profile-picture">
+                    <h1 id="username" style="display: inline;"></h1>
+                </div>
+                <div id="about">
+                    <p id="bio"></p>
+                </div>
+            </div>
+            <div id="status">
+                <div id="activity-img-wrapper">
+                    <img src="" alt="" id="large-img">
+                    <img src="" alt="" id="small-img">
+                </div>
+                <h3 id="activity-name"></h3>
+                <p id="activity-text"></p>
             </div>
         </div>
     </body>
