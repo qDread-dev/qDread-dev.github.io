@@ -26,8 +26,7 @@ window.onload = async () => {
             pfp_el.style.borderColor = "gray";
             break;
     }
-    // ! disabled for testing
-    // return;
+
     if (data.spotify) {
         console.log(data.spotify);
         document.getElementById("large-img").src = data.spotify.album_art_url;
@@ -48,6 +47,7 @@ window.onload = async () => {
         } else {
             formated_time = `${hours}:${minutes}:${seconds}`;
         }
+        // shoot me
         let status_text = activity_data.state + "\n" + activity_data.details + "\n" + formated_time +  " elapsed";
         let large_img = "https://cdn.discordapp.com/app-assets/383226320970055681/" + activity_data.assets.large_image + ".png";
         let small_img = "https://cdn.discordapp.com/app-assets/383226320970055681/" + activity_data.assets.small_image + ".png";
@@ -56,9 +56,7 @@ window.onload = async () => {
         document.getElementById("activity-text").innerText = status_text;
         document.getElementById("large-img").src = large_img;
         document.getElementById("small-img").src = small_img;
-        // activity_data_timestamps.start is a utc time stamp, convert into ms since that point
         
     
     }
-    // let  
 }
