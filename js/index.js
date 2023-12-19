@@ -9,6 +9,7 @@ window.onload = async () => {
     // pfp element
     let pfp_el = document.getElementById("profile-picture");
     pfp_el.src = avatar_url;
+    console.log(data)
     document.getElementById("username").innerHTML = data.discord_user.username;
     switch (data.discord_status) {
         case "online":
