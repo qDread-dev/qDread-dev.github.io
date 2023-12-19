@@ -32,10 +32,6 @@ body {
     margin: 0;
     font-family: 'Ubuntu', monospace;
 
-    @media (max-width: 600px) {
-        // piss yellow for testing
-        background-color: yellow;
-    }
 }
 
 #icon-wrapper {
@@ -86,7 +82,7 @@ body {
 }
 #profile-picture {
     width: 128px;
-    border-radius: 50px;
+    border-radius: 10px;
     border-width: 3px;
     border-style: solid;
 }

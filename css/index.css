@@ -9,11 +9,6 @@ body {
   margin: 0;
   font-family: "Ubuntu", monospace;
 }
-@media (max-width: 600px) {
-  body {
-    background-color: yellow;
-  }
-}
 
 #icon-wrapper {
   display: flex;
@@ -58,7 +53,7 @@ body {
 
 #profile-picture {
   width: 128px;
-  border-radius: 50px;
+  border-radius: 10px;
   border-width: 3px;
   border-style: solid;
 }
