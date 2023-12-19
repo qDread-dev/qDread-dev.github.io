@@ -74,6 +74,8 @@ body {
 #separator {
   width: 100%;
   height: 2px;
+  border-radius: 1px;
+  border-color: transparent;
   background-color: rgba(155, 89, 182, 0.5);
 }
 
@@ -87,7 +89,7 @@ body {
   align-items: center;
 }
 #info-wrap img {
-  margin-right: 0.5em;
+  margin-right: 2em;
 }
 
 /*# sourceMappingURL=index.css.map */
