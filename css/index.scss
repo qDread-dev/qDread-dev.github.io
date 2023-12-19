@@ -61,6 +61,7 @@ body {
     border-radius: 30px;
     display: flex;
     background-color: map-get($map: $current-theme, $key: secondary);
+    min-height: 52%;
 }
 
 #discord {
@@ -132,3 +133,7 @@ body {
     }
 }
 
+.hide-img-wrapper {
+    // display: none;
+    margin-left: 2em;
+}

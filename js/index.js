@@ -34,30 +34,43 @@ window.onload = async () => {
         document.getElementById("activity-name").innerHTML = data.spotify.song;
         document.getElementById("activity-text").innerHTML = "by " + data.spotify.artist;
     } else if(data.activities) {
-        
-        let activity_data = data.activities[data.activities.length - 1];
-        let now = Date.now();
-        let elapsed_time_ms = now - activity_data.timestamps.start;
-        let elapsed_time = new Date(elapsed_time_ms);
-        let hours = elapsed_time.getUTCHours().toString();
-        let minutes = elapsed_time.getUTCMinutes().toString().padStart(2, '0');
-        let seconds = elapsed_time.getUTCSeconds().toString().padStart(2, '0');
-        let formated_time;
-        if (hours == "0") {
-            formated_time = `${minutes}:${seconds}`;
-        } else {
-            formated_time = `${hours}:${minutes}:${seconds}`;
+        try {
+            let activity_data = data.activities[data.activities.length - 1];
+            let now = Date.now();
+            let elapsed_time_ms = now - activity_data.timestamps.start;
+            let elapsed_time = new Date(elapsed_time_ms);
+            let hours = elapsed_time.getUTCHours().toString();
+            let minutes = elapsed_time.getUTCMinutes().toString().padStart(2, '0');
+            let seconds = elapsed_time.getUTCSeconds().toString().padStart(2, '0');
+            let formated_time;
+            if (hours == "0") {
+                formated_time = `${minutes}:${seconds}`;
+            } else {
+                formated_time = `${hours}:${minutes}:${seconds}`;
+            }
+            // shoot me
+            let status_text = activity_data.state + "\n" + activity_data.details + "\n" + formated_time +  " elapsed";
+            let large_img = "https://cdn.discordapp.com/app-assets/383226320970055681/";
+            let small_img = "https://cdn.discordapp.com/app-assets/383226320970055681/";
+            try {
+                large_img += activity_data.assets.large_image + ".png";
+                small_img += activity_data.assets.small_image + ".png";
+
+            } catch {
+                large_img = "./icons/missing-activity.svg";
+                small_img = "";
+            }
+            console.log(activity_data);
+            console.log(activity_data.name);
+            document.getElementById("activity-name").innerText = activity_data.name;
+            document.getElementById("activity-text").innerText = status_text;
+            document.getElementById("large-img").src = large_img;
+            document.getElementById("small-img").src = small_img;
+        } catch {
+            document.getElementById("activity-name").innerText = "Sleeping";
+            document.getElementById("activity-text").innerText = "For once\nzzz";
+            document.getElementById("activity-img-wrapper").remove();
+            document.getElementById("text-wrap").style.marginLeft = "2em";
         }
-        // shoot me
-        let status_text = activity_data.state + "\n" + activity_data.details + "\n" + formated_time +  " elapsed";
-        let large_img = "https://cdn.discordapp.com/app-assets/383226320970055681/" + activity_data.assets.large_image + ".png";
-        let small_img = "https://cdn.discordapp.com/app-assets/383226320970055681/" + activity_data.assets.small_image + ".png";
-        console.log(activity_data);
-        document.getElementById("activity-name").innerText = activity_data.name;
-        document.getElementById("activity-text").innerText = status_text;
-        document.getElementById("large-img").src = large_img;
-        document.getElementById("small-img").src = small_img;
-        
-    
     }
 }
