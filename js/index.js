@@ -49,7 +49,16 @@ window.onload = async () => {
                 formated_time = `${hours}:${minutes}:${seconds}`;
             }
             // shoot me
-            let status_text = activity_data.state + "\n" + activity_data.details + "\n" + formated_time +  " elapsed";
+            let status_text = "";
+            if (activity_data.state) {
+                status_text += activity_data.state + "\n";
+            }
+            if (activity_data.details) {
+                status_text += activity_data.details + "\n";
+            }
+            if (formated_time) {
+                status_text += formated_time + " elapsed";
+            }
             let large_img = "https://cdn.discordapp.com/app-assets/383226320970055681/";
             let small_img = "https://cdn.discordapp.com/app-assets/383226320970055681/";
             try {
