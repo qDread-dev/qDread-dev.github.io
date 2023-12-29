@@ -1,6 +1,11 @@
 // user id 587326588086124585
 
 window.onload = async () => {
+    Particles.init({
+        selector: '.background',
+        connectParticles: true,
+        color: "#fcfcfc",
+      });
     let response = await fetch("https://api.lanyard.rest/v1/users/587326588086124585");
     response = await response.json();
     let data = response.data;
