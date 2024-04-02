@@ -92,10 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
         audio_player.currentTime = progress_bar.value;
     });
 
-    particlesJS.load('particles-js', './assets/particles.json', function() {
-        console.log('callback - particles.js config loaded');
-    });
-
     
     document.addEventListener("keydown", (event) => {
         if (event.isComposing || event.key == " ") {
