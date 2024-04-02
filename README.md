@@ -1,3 +1,0 @@
-# Bio
-
-Personal site
