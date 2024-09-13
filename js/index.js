@@ -31,127 +31,127 @@ window.mobileCheck = function() {
     return check;
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 
-    // will be playing on click
-    let audio_player = document.getElementById("audio-player");
-    let play_pause = document.getElementById("play-pause");
-    let audio_confirm = document.getElementById("audio-start-screen");
-    let progress_bar = document.getElementById("audio-progress");
-    // the actual icon
-    let volume_button = document.getElementById("volume-control-text");
-    var volume_slider = document.getElementById('volume-slider');
-    var is_dragging = false;
+//     // will be playing on click
+//     let audio_player = document.getElementById("audio-player");
+//     let play_pause = document.getElementById("play-pause");
+//     let audio_confirm = document.getElementById("audio-start-screen");
+//     let progress_bar = document.getElementById("audio-progress");
+//     // the actual icon
+//     let volume_button = document.getElementById("volume-control-text");
+//     var volume_slider = document.getElementById('volume-slider');
+//     var is_dragging = false;
 
     
 
-    // playing audio requires it to be muted, or have user input
-    audio_confirm.addEventListener("click", () => {
-        audio_player.muted = false;
-        audio_confirm.style.display = "none";
-        audio_player.play();
+//     // playing audio requires it to be muted, or have user input
+//     audio_confirm.addEventListener("click", () => {
+//         audio_player.muted = false;
+//         audio_confirm.style.display = "none";
+//         audio_player.play();
         
-    });
-    play_pause.addEventListener("click", () => {
-        if (audio_player.paused) {
-            audio_player.play();
-            document.getElementById("play-pause-text").innerText = "pause";
-        } else {
-            audio_player.pause();
-            document.getElementById("play-pause-text").innerText = "play_arrow";
-        }
+//     });
+//     play_pause.addEventListener("click", () => {
+//         if (audio_player.paused) {
+//             audio_player.play();
+//             document.getElementById("play-pause-text").innerText = "pause";
+//         } else {
+//             audio_player.pause();
+//             document.getElementById("play-pause-text").innerText = "play_arrow";
+//         }
 
-    });
-
-    
-
-    progress_bar.addEventListener("mousedown", () => {
-        is_dragging = true;
-    });
-
-    progress_bar.addEventListener("mouseup", () => {
-        is_dragging = false;
-    });
-
-    audio_player.addEventListener("loadedmetadata", () => {
-        var duration = audio_player.duration;
-        progress_bar.max = duration;
-        progress_bar.value = 0;
-        document.getElementById("duration").innerText = convert_time(duration);
-        document.getElementById("audio-start-text").innerText = "click";
-    });
-
-    audio_player.addEventListener("timeupdate", () => {
-        if (!is_dragging) {
-            progress_bar.value = audio_player.currentTime;
-        }
-        document.getElementById("current-time").innerText = convert_time(audio_player.currentTime);   
-    });
-
-    progress_bar.addEventListener("change", () => {
-        audio_player.currentTime = progress_bar.value;
-    });
+//     });
 
     
-    document.addEventListener("keydown", (event) => {
-        if (event.isComposing || event.key == " ") {
-            if (audio_player.paused) {
-                audio_player.play();
-                document.getElementById("play-pause-text").innerText = "pause";
-            } else {
-                audio_player.pause();
-                document.getElementById("play-pause-text").innerText = "play_arrow";
-            }
-        };
-        if (event.isComposing || event.key == "m") {
-            audio_player.muted = !audio_player.muted;
-        if (audio_player.muted == true) {
-            volume_button.innerText = "volume_off";
-        } else {
-            if (parseFloat(volume_slider.value) > .50) {
-                volume_button.innerText = "volume_up";
-            } else if (parseFloat(volume_slider.value) <= .5) {
-                volume_button.innerText = "volume_down";
-            }
-            if (parseFloat(volume_slider.value) == 0) {
-                volume_button.innerText = "volume_off";
-            }
-        }
-        }
-    }); 
+
+//     progress_bar.addEventListener("mousedown", () => {
+//         is_dragging = true;
+//     });
+
+//     progress_bar.addEventListener("mouseup", () => {
+//         is_dragging = false;
+//     });
+
+//     audio_player.addEventListener("loadedmetadata", () => {
+//         var duration = audio_player.duration;
+//         progress_bar.max = duration;
+//         progress_bar.value = 0;
+//         document.getElementById("duration").innerText = convert_time(duration);
+//         document.getElementById("audio-start-text").innerText = "click";
+//     });
+
+//     audio_player.addEventListener("timeupdate", () => {
+//         if (!is_dragging) {
+//             progress_bar.value = audio_player.currentTime;
+//         }
+//         document.getElementById("current-time").innerText = convert_time(audio_player.currentTime);   
+//     });
+
+//     progress_bar.addEventListener("change", () => {
+//         audio_player.currentTime = progress_bar.value;
+//     });
+
+    
+//     document.addEventListener("keydown", (event) => {
+//         if (event.isComposing || event.key == " ") {
+//             if (audio_player.paused) {
+//                 audio_player.play();
+//                 document.getElementById("play-pause-text").innerText = "pause";
+//             } else {
+//                 audio_player.pause();
+//                 document.getElementById("play-pause-text").innerText = "play_arrow";
+//             }
+//         };
+//         if (event.isComposing || event.key == "m") {
+//             audio_player.muted = !audio_player.muted;
+//         if (audio_player.muted == true) {
+//             volume_button.innerText = "volume_off";
+//         } else {
+//             if (parseFloat(volume_slider.value) > .50) {
+//                 volume_button.innerText = "volume_up";
+//             } else if (parseFloat(volume_slider.value) <= .5) {
+//                 volume_button.innerText = "volume_down";
+//             }
+//             if (parseFloat(volume_slider.value) == 0) {
+//                 volume_button.innerText = "volume_off";
+//             }
+//         }
+//         }
+//     }); 
     
 
 
-    volume_button.addEventListener("click", () => {
-        audio_player.muted = !audio_player.muted;
-        if (audio_player.muted == true) {
-            volume_button.innerText = "volume_off";
-        } else {
-            if (parseFloat(volume_slider.value) > .50) {
-                volume_button.innerText = "volume_up";
-            } else if (parseFloat(volume_slider.value) <= .5) {
-                volume_button.innerText = "volume_down";
-            }
-            if (parseFloat(volume_slider.value) == 0) {
-                volume_button.innerText = "volume_off";
-            }
-        }
-    });
+//     volume_button.addEventListener("click", () => {
+//         audio_player.muted = !audio_player.muted;
+//         if (audio_player.muted == true) {
+//             volume_button.innerText = "volume_off";
+//         } else {
+//             if (parseFloat(volume_slider.value) > .50) {
+//                 volume_button.innerText = "volume_up";
+//             } else if (parseFloat(volume_slider.value) <= .5) {
+//                 volume_button.innerText = "volume_down";
+//             }
+//             if (parseFloat(volume_slider.value) == 0) {
+//                 volume_button.innerText = "volume_off";
+//             }
+//         }
+//     });
 
 
-    volume_slider.addEventListener('input', function() {
-        audio_player.volume = volume_slider.value;
+//     volume_slider.addEventListener('input', function() {
+//         audio_player.volume = volume_slider.value;
 
-        if (parseFloat(volume_slider.value) > .50) {
-            volume_button.innerText = "volume_up";
-        } else if (parseFloat(volume_slider.value) <= .5) {
-            volume_button.innerText = "volume_down";
-        }
-        if (parseFloat(volume_slider.value) == 0) {
-            volume_button.innerText = "volume_off";
-        }
+//         if (parseFloat(volume_slider.value) > .50) {
+//             volume_button.innerText = "volume_up";
+//         } else if (parseFloat(volume_slider.value) <= .5) {
+//             volume_button.innerText = "volume_down";
+//         }
+//         if (parseFloat(volume_slider.value) == 0) {
+//             volume_button.innerText = "volume_off";
+//         }
         
-    });
+//     });
 
 
 });
